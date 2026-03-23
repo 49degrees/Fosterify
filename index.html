@@ -3,83 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fosterify – See the Gaps, Bridge the Future</title>
+  <title>Fosterify</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-<header>
-  <h1>Fosterify</h1>
-  <p>See the Gaps, Bridge the Future</p>
-</header>
-
-<nav>
-  <a href="#survey">Survey</a>
-  <a href="#visuals">Data</a>
-  <a href="#insights">Insights</a>
-  <a href="#impact">Impact</a>
-  <a href="#about">About</a>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Fosterify</div>
+  <div class="nav-links">
+    <a href="#survey">Survey</a>
+    <a href="#data">Data</a>
+    <a href="#insights">Insights</a>
+    <a href="#impact">Impact</a>
+  </div>
 </nav>
 
-<section id="survey">
-  <h2>Student Survey</h2>
-  <p>Help us understand access to opportunities.</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>See the Gaps. Bridge the Future.</h1>
+  <p>Using data to uncover inequality in student opportunities</p>
+</section>
+
+<!-- SURVEY -->
+<section id="survey" class="section">
+  <h2>Take the Survey</h2>
 
   <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSewGSJgbTNI8aQM6rJxm3oa16LvKMr4mZ9sShQJ8BolE02-bg/viewform?embedded=true"
-    height="700">
+    src="https://docs.google.com/forms/d/e/1FAIpQLSewGSJgbTNI8aQM6rJxm3oa16LvKMr4mZ9sShQJ8BolE02-bg/viewform?embedded=true">
   </iframe>
 
-  <p>If the form doesn't load:</p>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSewGSJgbTNI8aQM6rJxm3oa16LvKMr4mZ9sShQJ8BolE02-bg/viewform" target="_blank">
-    <button>Open Survey</button>
+    <button class="primary-btn">Open Survey</button>
   </a>
 </section>
 
-<section id="visuals">
+<!-- DATA -->
+<section id="data" class="section alt">
   <h2>Opportunity Data</h2>
 
-  <div class="chart-container">
-    <canvas id="awarenessChart"></canvas>
-  </div>
-
-  <div class="chart-container">
-    <canvas id="accessChart"></canvas>
-  </div>
-
-  <div class="chart-container">
-    <canvas id="participationChart"></canvas>
+  <div class="grid">
+    <div class="card"><canvas id="awarenessChart"></canvas></div>
+    <div class="card"><canvas id="accessChart"></canvas></div>
+    <div class="card"><canvas id="participationChart"></canvas></div>
   </div>
 </section>
 
-<section id="insights">
+<!-- INSIGHTS -->
+<section id="insights" class="section">
   <h2>Key Insights</h2>
-  <ul>
-    <li>Over 50% of students are not fully aware of available opportunities</li>
-    <li>Mentorship has the lowest access among all opportunity types</li>
-    <li>A gap exists between access and participation</li>
-    <li>The biggest barriers are lack of time and awareness</li>
-    <li>Many students do not believe opportunities are equally accessible</li>
-  </ul>
+
+  <div class="grid">
+    <div class="card">Over 50% of students are not fully aware of opportunities</div>
+    <div class="card">Mentorship has the lowest access</div>
+    <div class="card">Clear gap between access and participation</div>
+    <div class="card">Top barriers: time and awareness</div>
+    <div class="card">Many students perceive inequality</div>
+  </div>
 </section>
 
-<section id="impact">
+<!-- IMPACT -->
+<section id="impact" class="section alt">
   <h2>Action Plan</h2>
-  <p>
-    Fosterify will develop a centralized platform where all academic and extracurricular
-    opportunities are clearly listed, improving awareness and accessibility.
-  </p>
-</section>
 
-<section id="about">
-  <h2>About</h2>
-  <p>
-    Fosterify is a student-led initiative using data to identify and reduce inequality
-    in access to opportunities.
-  </p>
+  <div class="card">
+    Fosterify will build a centralized opportunity hub where all academic and extracurricular programs are clearly listed, improving awareness and accessibility.
+  </div>
 </section>
 
 <footer>
@@ -87,6 +85,5 @@
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
