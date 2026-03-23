@@ -1,43 +1,45 @@
-const ctx1 = document.getElementById('accessChart').getContext('2d');
-const accessChart = new Chart(ctx1, {
+// Awareness Chart
+new Chart(document.getElementById('awarenessChart'), {
+  type: 'pie',
+  data: {
+    labels: ['Aware', 'Somewhat', 'Not Aware'],
+    datasets: [{
+      data: [8, 4, 5],
+      backgroundColor: ['#4a90e2', '#f5a623', '#d0021b']
+    }]
+  }
+});
+
+// Access Chart
+new Chart(document.getElementById('accessChart'), {
   type: 'bar',
   data: {
-    labels: ['Math Tutoring', 'Science Clubs', 'Arts Programs', 'Sports Teams', 'Mentorship'],
+    labels: ['Tutoring', 'Clubs', 'Competitions', 'Sports', 'Mentorship'],
     datasets: [{
       label: 'Access (%)',
-      data: [80, 65, 50, 70, 40],
+      data: [60, 70, 75, 75, 45],
       backgroundColor: '#4a90e2'
     }]
   },
   options: {
-    responsive: true,
-    plugins: {
-      legend: { display: false },
-      title: { display: true, text: 'Student Access to Opportunities' }
-    },
     scales: {
       y: { beginAtZero: true, max: 100 }
     }
   }
 });
 
-const ctx2 = document.getElementById('participationChart').getContext('2d');
-const participationChart = new Chart(ctx2, {
+// Participation Chart
+new Chart(document.getElementById('participationChart'), {
   type: 'bar',
   data: {
-    labels: ['Math Tutoring', 'Science Clubs', 'Arts Programs', 'Sports Teams', 'Mentorship'],
+    labels: ['Tutoring', 'Clubs', 'Competitions', 'Sports', 'Mentorship'],
     datasets: [{
       label: 'Participation (%)',
-      data: [50, 40, 30, 55, 25],
+      data: [35, 50, 55, 60, 30],
       backgroundColor: '#50e3c2'
     }]
   },
   options: {
-    responsive: true,
-    plugins: {
-      legend: { display: false },
-      title: { display: true, text: 'Student Participation in Opportunities' }
-    },
     scales: {
       y: { beginAtZero: true, max: 100 }
     }
