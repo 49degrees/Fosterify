@@ -3,73 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fosterify – See the Gaps, Bridge the Future. </title>
-  <!-- Google Fonts -->
+  <title>Fosterify – See the Gaps, Bridge the Future</title>
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Link to external CSS -->
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- Chart.js CDN -->
+
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Fosterify</h1>
-    <p>Nurture Growth. Unlock Potential.</p>
-  </header>
+<header>
+  <h1>Fosterify</h1>
+  <p>See the Gaps, Bridge the Future</p>
+</header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#survey">Survey</a>
-    <a href="#visuals">Visualizations</a>
-    <a href="#impact">Impact</a>
-    <a href="#about">About</a>
-  </nav>
+<nav>
+  <a href="#survey">Survey</a>
+  <a href="#visuals">Data</a>
+  <a href="#impact">Impact</a>
+  <a href="#about">About</a>
+</nav>
 
-  <!-- Survey Section -->
-  <section id="survey">
-    <h2>Student Survey</h2>
-    <p>Fill out this quick survey to help us map access to opportunities.</p>
-    <!-- Replace with your Google Form URL -->
-    <iframe src="YOUR_GOOGLE_FORM_URL_HERE"></iframe>
-  </section>
+<section id="survey">
+  <h2>Student Survey</h2>
+  <p>Help us understand access to opportunities at your school.</p>
 
-  <!-- Visualizations Section -->
-  <section id="visuals">
-    <h2>Visualizations</h2>
-    <p>Sample charts showing access vs participation.</p>
-    <div class="chart-container">
-      <canvas id="accessChart"></canvas>
-    </div>
-    <div class="chart-container">
-      <canvas id="participationChart"></canvas>
-    </div>
-  </section>
+  <iframe 
+    src="https://docs.google.com/forms/d/e/oQdCf2NS6ofpxu9u5/viewform?embedded=true"
+    width="100%" 
+    height="700">
+  </iframe>
+</section>
 
-  <!-- Impact Section -->
-  <section id="impact">
-    <h2>Impact Metrics</h2>
-    <ul>
-      <li>Students Reached: 120 (sample)</li>
-      <li>Gaps Identified: 8</li>
-      <li>Workshops/Interventions: 3</li>
-    </ul>
-    <p>These numbers will update as real survey data comes in.</p>
-  </section>
+<section id="visuals">
+  <h2>Opportunity Gaps</h2>
+  <p>Comparing access vs participation across opportunities.</p>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Fosterify</h2>
-    <p>Fosterify is a student-focused, data-driven platform designed to identify and reduce disparities in access to academic and extracurricular opportunities. By collecting survey data, visualizing gaps, and implementing actionable interventions, we empower students to reach their full potential.</p>
-  </section>
+  <div class="chart-container">
+    <canvas id="accessChart"></canvas>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2026 Fosterify. All rights reserved.
-  </footer>
+  <div class="chart-container">
+    <canvas id="participationChart"></canvas>
+  </div>
+</section>
 
-  <!-- Link to external JS -->
-  <script src="script.js"></script>
+<section id="impact">
+  <h2>Impact</h2>
+  <ul>
+    <li>Students Surveyed: 0 (live soon)</li>
+    <li>Gaps Identified: —</li>
+    <li>Actions Taken: —</li>
+  </ul>
+</section>
+
+<section id="about">
+  <h2>About Fosterify</h2>
+  <p>
+    Fosterify is a data-driven platform that identifies and addresses disparities 
+    in access to academic and extracurricular opportunities. By collecting student 
+    data and visualizing key gaps, Fosterify helps schools take action and ensure 
+    every student has equal access to success.
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Fosterify</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
