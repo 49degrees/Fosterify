@@ -5,13 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fosterify – See the Gaps, Bridge the Future</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -24,28 +19,32 @@
 <nav>
   <a href="#survey">Survey</a>
   <a href="#visuals">Data</a>
+  <a href="#insights">Insights</a>
   <a href="#impact">Impact</a>
   <a href="#about">About</a>
 </nav>
 
 <section id="survey">
   <h2>Student Survey</h2>
-  <p>Help us understand access to opportunities at your school.</p>
+  <p>Help us understand access to opportunities.</p>
 
   <iframe 
     src="https://docs.google.com/forms/d/e/1FAIpQLSewGSJgbTNI8aQM6rJxm3oa16LvKMr4mZ9sShQJ8BolE02-bg/viewform?embedded=true"
-    width="100%" 
-    height="700" 
-    frameborder="0"
-    marginheight="0"
-    marginwidth="0">
-    Loading…
+    height="700">
   </iframe>
+
+  <p>If the form doesn't load:</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSewGSJgbTNI8aQM6rJxm3oa16LvKMr4mZ9sShQJ8BolE02-bg/viewform" target="_blank">
+    <button>Open Survey</button>
+  </a>
 </section>
 
 <section id="visuals">
-  <h2>Opportunity Gaps</h2>
-  <p>Comparing access vs participation across opportunities.</p>
+  <h2>Opportunity Data</h2>
+
+  <div class="chart-container">
+    <canvas id="awarenessChart"></canvas>
+  </div>
 
   <div class="chart-container">
     <canvas id="accessChart"></canvas>
@@ -56,22 +55,30 @@
   </div>
 </section>
 
-<section id="impact">
-  <h2>Impact</h2>
+<section id="insights">
+  <h2>Key Insights</h2>
   <ul>
-    <li>Students Surveyed: 0 (live soon)</li>
-    <li>Gaps Identified: —</li>
-    <li>Actions Taken: —</li>
+    <li>Over 50% of students are not fully aware of available opportunities</li>
+    <li>Mentorship has the lowest access among all opportunity types</li>
+    <li>A gap exists between access and participation</li>
+    <li>The biggest barriers are lack of time and awareness</li>
+    <li>Many students do not believe opportunities are equally accessible</li>
   </ul>
 </section>
 
-<section id="about">
-  <h2>About Fosterify</h2>
+<section id="impact">
+  <h2>Action Plan</h2>
   <p>
-    Fosterify is a data-driven platform that identifies and addresses disparities 
-    in access to academic and extracurricular opportunities. By collecting student 
-    data and visualizing key gaps, Fosterify helps schools take action and ensure 
-    every student has equal access to success.
+    Fosterify will develop a centralized platform where all academic and extracurricular
+    opportunities are clearly listed, improving awareness and accessibility.
+  </p>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p>
+    Fosterify is a student-led initiative using data to identify and reduce inequality
+    in access to opportunities.
   </p>
 </section>
 
