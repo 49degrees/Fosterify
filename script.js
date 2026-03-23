@@ -40,8 +40,9 @@ Papa.parse(SHEET_CSV_URL, {
       if (row["Do you have access to the following? [Sports Teams]"] === "Yes") accessCounts.Sports++;
       if (row["Do you have access to the following? [Mentorship]"] === "Yes") accessCounts.Mentorship++;
 
-      // Participation (multiple answers)
+      // Participation
       const participates = row["Which of these do you actually participate in?"];
+      if (!participates) return;
       if (participates.includes("Tutoring")) participationCounts.Tutoring++;
       if (participates.includes("Clubs")) participationCounts.Clubs++;
       if (participates.includes("Competitions")) participationCounts.Competitions++;
@@ -52,16 +53,16 @@ Papa.parse(SHEET_CSV_URL, {
     // Convert counts to percentages
     const toPercent = count => total ? Math.round((count / total) * 100) : 0;
 
-    // Build charts
+    // Charts
     new Chart(document.getElementById("awarenessChart"), {
       type: "pie",
       data: {
         labels: ["Yes", "Somewhat", "No"],
-        datasets: [{ data: [
-          awareCount.Yes,
-          awareCount.Somewhat,
-          awareCount.No
-        ] }]
+        datasets: [{
+          label: "Awareness",
+          data: [awareCount.Yes, awareCount.Somewhat, awareCount.No],
+          backgroundColor: ["#4a90e2","#50e3c2","#f5a623"]
+        }]
       }
     });
 
@@ -69,28 +70,38 @@ Papa.parse(SHEET_CSV_URL, {
       type: "bar",
       data: {
         labels: ["Tutoring", "Clubs", "Competitions", "Sports", "Mentorship"],
-        datasets: [{ label: "Access (%)", data: [
-          toPercent(accessCounts.Tutoring),
-          toPercent(accessCounts.Clubs),
-          toPercent(accessCounts.Competitions),
-          toPercent(accessCounts.Sports),
-          toPercent(accessCounts.Mentorship)
-        ] }]
-      }
+        datasets: [{
+          label: "Access (%)",
+          data: [
+            toPercent(accessCounts.Tutoring),
+            toPercent(accessCounts.Clubs),
+            toPercent(accessCounts.Competitions),
+            toPercent(accessCounts.Sports),
+            toPercent(accessCounts.Mentorship)
+          ],
+          backgroundColor: "#4a90e2"
+        }]
+      },
+      options: { scales: { y: { beginAtZero: true, max: 100 } } }
     });
 
     new Chart(document.getElementById("participationChart"), {
       type: "bar",
       data: {
         labels: ["Tutoring", "Clubs", "Competitions", "Sports", "Mentorship"],
-        datasets: [{ label: "Participation (%)", data: [
-          toPercent(participationCounts.Tutoring),
-          toPercent(participationCounts.Clubs),
-          toPercent(participationCounts.Competitions),
-          toPercent(participationCounts.Sports),
-          toPercent(participationCounts.Mentorship)
-        ] }]
-      }
+        datasets: [{
+          label: "Participation (%)",
+          data: [
+            toPercent(participationCounts.Tutoring),
+            toPercent(participationCounts.Clubs),
+            toPercent(participationCounts.Competitions),
+            toPercent(participationCounts.Sports),
+            toPercent(participationCounts.Mentorship)
+          ],
+          backgroundColor: "#50e3c2"
+        }]
+      },
+      options: { scales: { y: { beginAtZero: true, max: 100 } } }
     });
   }
 });
