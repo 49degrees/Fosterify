@@ -2,20 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fosterify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- PapaParse -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 </head>
 
 <body>
@@ -24,69 +18,83 @@
 <nav class="navbar">
   <div class="logo">Fosterify</div>
   <div class="nav-links">
-    <a href="#survey">Survey</a>
-    <a href="#data">Data</a>
-    <a href="#insights">Insights</a>
-    <a href="#impact">Impact</a>
+    <a href="#explore">Explore</a>
+    <a href="#support">Get Support</a>
+    <a href="#volunteer">Offer Help</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>See the Gaps. Bridge the Future.</h1>
-  <p>Using data to uncover inequality in student opportunities</p>
+  <h1>Find Your Path. Get Support. Move Forward.</h1>
+  <p>Helping students discover opportunities and connect with real support.</p>
 </section>
 
-<!-- SURVEY -->
-<section id="survey" class="section">
-  <h2>Take the Survey</h2>
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSewGSJgbTNI8aQM6rJxm3oa16LvKMr4mZ9sShQJ8BolE02-bg/viewform?embedded=true">
-  </iframe>
-
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSewGSJgbTNI8aQM6rJxm3oa16LvKMr4mZ9sShQJ8BolE02-bg/viewform" target="_blank">
-    <button class="primary-btn">Open Survey</button>
-  </a>
-</section>
-
-<!-- DATA -->
-<section id="data" class="section alt">
-  <h2>Opportunity Data</h2>
-
-  <div class="grid">
-    <div class="card"><canvas id="awarenessChart"></canvas></div>
-    <div class="card"><canvas id="accessChart"></canvas></div>
-    <div class="card"><canvas id="participationChart"></canvas></div>
-  </div>
-</section>
-
-<!-- INSIGHTS -->
-<section id="insights" class="section">
-  <h2>Key Insights</h2>
-
-  <div class="grid">
-    <div class="card">Many students are not fully aware of opportunities.</div>
-    <div class="card">Mentorship has the lowest access rate.</div>
-    <div class="card">Clear gap between access and participation.</div>
-    <div class="card">Top barriers: time and awareness.</div>
-    <div class="card">Students perceive unequal access across schools.</div>
-  </div>
-</section>
-
-<!-- IMPACT -->
-<section id="impact" class="section alt">
-  <h2>Action Plan</h2>
+<!-- EXPLORE -->
+<section id="explore" class="section">
+  <h2>Explore Paths</h2>
 
   <div class="card">
-    Fosterify will build a centralized opportunity hub where all academic and extracurricular programs are clearly listed, improving awareness and accessibility for all students.
+    <label>What interests you?</label>
+    <select id="interest">
+      <option value="academic">Problem Solving / Academics</option>
+      <option value="people">Working with People</option>
+      <option value="creative">Creativity</option>
+      <option value="sports">Sports</option>
+      <option value="unsure">Not Sure</option>
+    </select>
+
+    <label>How do you want to try it?</label>
+    <select id="style">
+      <option value="competitive">Competitive</option>
+      <option value="casual">Casual</option>
+      <option value="mentorship">One-on-One</option>
+    </select>
+
+    <button onclick="generatePath()" class="primary-btn">Show Suggestions</button>
+
+    <div id="results"></div>
   </div>
+</section>
+
+<!-- GET SUPPORT -->
+<section id="support" class="section alt">
+  <h2>Get Support</h2>
+
+  <form id="supportForm" class="card">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="school" placeholder="School" required>
+
+    <select name="type">
+      <option>Tutoring</option>
+      <option>Mentorship</option>
+      <option>Guidance</option>
+    </select>
+
+    <input type="text" name="subject" placeholder="What do you need help with?" required>
+
+    <button type="submit" class="primary-btn">Request Help</button>
+  </form>
+</section>
+
+<!-- OFFER HELP -->
+<section id="volunteer" class="section">
+  <h2>Offer Help</h2>
+
+  <form id="volunteerForm" class="card">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="school" placeholder="School" required>
+
+    <input type="text" name="skills" placeholder="What can you help with?" required>
+
+    <button type="submit" class="primary-btn">Offer Help</button>
+  </form>
 </section>
 
 <footer>
   <p>© 2026 Fosterify</p>
 </footer>
 
-<!-- JS -->
 <script src="script.js"></script>
 
 </body>
