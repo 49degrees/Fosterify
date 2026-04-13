@@ -2,100 +2,329 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fosterify</title>
+  <title>Fosterify – Find Your Path. Get Support. Move Forward.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <meta name="description" content="Fosterify helps students discover their interests, access opportunities, and connect with free peer support like tutoring, mentorship, and guidance.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="logo">Fosterify</div>
-  <div class="nav-links">
-    <a href="#explore">Explore</a>
-    <a href="#support">Get Support</a>
-    <a href="#volunteer">Offer Help</a>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#" class="logo">
+      <span class="logo-icon">✦</span> Fosterify
+    </a>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#explore">Explore</a>
+      <a href="#support">Get Support</a>
+      <a href="#volunteer">Offer Help</a>
+      <a href="#opportunities">Opportunities</a>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Find Your Path. Get Support. Move Forward.</h1>
-  <p>Helping students discover opportunities and connect with real support.</p>
+  <div class="hero-content">
+    <h1>Find Your Path. Get Support. Move Forward.</h1>
+    <p class="hero-sub">Fosterify helps students discover opportunities, connect with free peer support, and take meaningful steps toward their goals.</p>
+    <div class="hero-actions">
+      <a href="#explore" class="btn btn-white">Explore Paths</a>
+      <a href="#support" class="btn btn-outline-white">Get Support</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Students Helped</span></div>
+      <div class="stat"><span class="stat-num">120+</span><span class="stat-label">Peer Volunteers</span></div>
+      <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Opportunities</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- EXPLORE -->
+<!-- EXPLORE PATHS -->
 <section id="explore" class="section">
-  <h2>Explore Paths</h2>
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Discover</span>
+      <h2>Explore Paths</h2>
+      <p class="section-desc">Select your interests and how you want to engage — we'll suggest the best next steps for you.</p>
+    </div>
 
-  <div class="card">
-    <label>What interests you?</label>
-    <select id="interest">
-      <option value="academic">Problem Solving / Academics</option>
-      <option value="people">Working with People</option>
-      <option value="creative">Creativity</option>
-      <option value="sports">Sports</option>
-      <option value="unsure">Not Sure</option>
-    </select>
+    <div class="explore-card card">
+      <div class="explore-step">
+        <h3>1. What interests you?</h3>
+        <div class="pill-group" id="interestGroup">
+          <button class="pill" data-value="academic"><span class="pill-icon">📚</span> Academics</button>
+          <button class="pill" data-value="sports"><span class="pill-icon">⚽</span> Sports</button>
+          <button class="pill" data-value="creative"><span class="pill-icon">🎨</span> Creativity</button>
+          <button class="pill" data-value="people"><span class="pill-icon">🤝</span> Working with People</button>
+          <button class="pill pill-unsure" data-value="unsure"><span class="pill-icon">🤷</span> Not Sure</button>
+        </div>
+      </div>
 
-    <label>How do you want to try it?</label>
-    <select id="style">
-      <option value="competitive">Competitive</option>
-      <option value="casual">Casual</option>
-      <option value="mentorship">One-on-One</option>
-    </select>
+      <div class="explore-step">
+        <h3>2. How do you want to engage?</h3>
+        <div class="pill-group" id="styleGroup">
+          <button class="pill" data-value="competitive"><span class="pill-icon">🏆</span> Competitive</button>
+          <button class="pill" data-value="casual"><span class="pill-icon">😊</span> Casual</button>
+          <button class="pill" data-value="one-on-one"><span class="pill-icon">👤</span> One-on-One</button>
+        </div>
+      </div>
 
-    <button onclick="generatePath()" class="primary-btn">Show Suggestions</button>
+      <button class="btn btn-primary btn-full" id="showSuggestions">Show Suggestions</button>
 
-    <div id="results"></div>
+      <div id="suggestionsResult" class="suggestions-result hidden"></div>
+    </div>
+
+    <div class="unsure-shortcut card card-accent">
+      <div class="unsure-content">
+        <span class="unsure-icon">💡</span>
+        <div>
+          <h3>Not sure where to start?</h3>
+          <p>No worries — we'll show you beginner-friendly, low-commitment options you can try right away.</p>
+        </div>
+      </div>
+      <button class="btn btn-secondary" id="unsureBtn">Show Me Easy Options</button>
+    </div>
   </div>
 </section>
 
 <!-- GET SUPPORT -->
-<section id="support" class="section alt">
-  <h2>Get Support</h2>
+<section id="support" class="section section-alt">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Connect</span>
+      <h2>Get Support</h2>
+      <p class="section-desc">Request free peer tutoring, mentorship, or guidance. We'll connect you with someone who can help.</p>
+    </div>
 
-  <form id="supportForm" class="card">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="text" name="school" placeholder="School" required>
+    <div class="card" id="supportCard">
+      <form id="supportForm" class="form-grid">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="supportName">Your Name</label>
+            <input type="text" id="supportName" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="supportSchool">School</label>
+            <input type="text" id="supportSchool" name="school" placeholder="Your school name" required>
+          </div>
+        </div>
 
-    <select name="type">
-      <option>Tutoring</option>
-      <option>Mentorship</option>
-      <option>Guidance</option>
-    </select>
+        <div class="form-group">
+          <label>Type of Support</label>
+          <div class="pill-group" id="supportTypeGroup">
+            <button type="button" class="pill" data-value="tutoring"><span class="pill-icon">📖</span> Tutoring</button>
+            <button type="button" class="pill" data-value="mentorship"><span class="pill-icon">🧭</span> Mentorship</button>
+            <button type="button" class="pill" data-value="guidance"><span class="pill-icon">💬</span> Guidance</button>
+          </div>
+        </div>
 
-    <input type="text" name="subject" placeholder="What do you need help with?" required>
+        <div class="form-group">
+          <label for="supportSubject">What do you need help with?</label>
+          <input type="text" id="supportSubject" name="subject" placeholder="e.g. Math, college apps, study habits..." required>
+        </div>
 
-    <button type="submit" class="primary-btn">Request Help</button>
-  </form>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Urgency</label>
+            <div class="pill-group pill-group-sm" id="urgencyGroup">
+              <button type="button" class="pill pill-sm" data-value="low">Low</button>
+              <button type="button" class="pill pill-sm" data-value="medium">Medium</button>
+              <button type="button" class="pill pill-sm" data-value="high">High</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="supportTime">Preferred Availability</label>
+            <select id="supportTime" name="availability">
+              <option value="">Select a time...</option>
+              <option value="weekday-morning">Weekday Mornings</option>
+              <option value="weekday-afternoon">Weekday Afternoons</option>
+              <option value="weekday-evening">Weekday Evenings</option>
+              <option value="weekend">Weekends</option>
+              <option value="flexible">Flexible</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
+      </form>
+
+      <!-- Confirmation State -->
+      <div id="supportConfirmation" class="confirmation hidden">
+        <div class="confirmation-icon">✓</div>
+        <h3>Request Received!</h3>
+        <p>We've got your request and will connect you with a peer supporter soon. Hang tight — help is on the way.</p>
+        <button class="btn btn-secondary" id="supportAnother">Submit Another Request</button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- OFFER HELP -->
 <section id="volunteer" class="section">
-  <h2>Offer Help</h2>
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Give Back</span>
+      <h2>Offer Help</h2>
+      <p class="section-desc">Share your skills and make a difference. Volunteer as a tutor, mentor, or coach.</p>
+    </div>
 
-  <form id="volunteerForm" class="card">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="text" name="school" placeholder="School" required>
+    <div class="offer-grid">
+      <div class="card" id="volunteerCard">
+        <form id="volunteerForm" class="form-grid">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="volName">Your Name</label>
+              <input type="text" id="volName" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="volSchool">School</label>
+              <input type="text" id="volSchool" name="school" placeholder="Your school name" required>
+            </div>
+          </div>
 
-    <input type="text" name="skills" placeholder="What can you help with?" required>
+          <div class="form-group">
+            <label for="volSkills">Skills or Areas You Can Help With</label>
+            <input type="text" id="volSkills" name="skills" placeholder="e.g. Algebra, essay writing, SAT prep..." required>
+          </div>
 
-    <button type="submit" class="primary-btn">Offer Help</button>
-  </form>
+          <div class="form-group">
+            <label>How do you want to help?</label>
+            <div class="pill-group" id="helpTypeGroup">
+              <button type="button" class="pill" data-value="tutoring"><span class="pill-icon">📖</span> Tutoring</button>
+              <button type="button" class="pill" data-value="mentoring"><span class="pill-icon">🧭</span> Mentoring</button>
+              <button type="button" class="pill" data-value="coaching"><span class="pill-icon">🏅</span> Coaching</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Sign Up to Help</button>
+        </form>
+
+        <!-- Confirmation State -->
+        <div id="volunteerConfirmation" class="confirmation hidden">
+          <div class="confirmation-icon">✓</div>
+          <h3>Thank You!</h3>
+          <p>You're making a real difference. We'll match you with students who need your help.</p>
+          <button class="btn btn-secondary" id="volunteerAnother">Sign Up Again</button>
+        </div>
+      </div>
+
+      <div class="impact-card card card-accent">
+        <h3>Why Volunteer?</h3>
+        <div class="impact-items">
+          <div class="impact-item">
+            <span class="impact-icon">🌟</span>
+            <div>
+              <strong>Make an Impact</strong>
+              <p>Help students overcome challenges and reach their potential.</p>
+            </div>
+          </div>
+          <div class="impact-item">
+            <span class="impact-icon">📈</span>
+            <div>
+              <strong>Build Your Skills</strong>
+              <p>Teaching others strengthens your own knowledge and leadership.</p>
+            </div>
+          </div>
+          <div class="impact-item">
+            <span class="impact-icon">🤝</span>
+            <div>
+              <strong>Join a Community</strong>
+              <p>Connect with motivated students who want to give back.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>© 2026 Fosterify</p>
+<!-- OPPORTUNITIES -->
+<section id="opportunities" class="section section-alt">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Discover</span>
+      <h2>Opportunities</h2>
+      <p class="section-desc">Browse curated clubs, competitions, programs, and scholarships — all in one place.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="academic">Academic</button>
+      <button class="filter-btn" data-filter="sports">Sports</button>
+      <button class="filter-btn" data-filter="leadership">Leadership</button>
+      <button class="filter-btn" data-filter="beginner">Beginner-Friendly</button>
+    </div>
+
+    <div class="opp-grid" id="oppGrid">
+      <!-- Opportunities are rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK / IMPACT -->
+<section id="feedback" class="section">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Feedback</span>
+      <h2>Help Us Improve</h2>
+      <p class="section-desc">Your feedback helps us serve students better.</p>
+    </div>
+
+    <div class="feedback-card card">
+      <div id="feedbackPrompt">
+        <h3>Did Fosterify help you?</h3>
+        <p>Let us know so we can keep improving.</p>
+        <div class="feedback-buttons">
+          <button class="feedback-btn feedback-yes" data-value="yes">
+            <span>👍</span> Yes, it helped!
+          </button>
+          <button class="feedback-btn feedback-no" data-value="no">
+            <span>👎</span> Not really
+          </button>
+        </div>
+      </div>
+      <div id="feedbackFollowUp" class="hidden">
+        <h3>Thanks for your feedback!</h3>
+        <p id="feedbackMessage"></p>
+        <div id="feedbackTextArea" class="hidden">
+          <textarea id="feedbackText" placeholder="Tell us more (optional)..." rows="3"></textarea>
+          <button class="btn btn-primary" id="submitFeedback">Send Feedback</button>
+        </div>
+      </div>
+      <div id="feedbackDone" class="hidden">
+        <div class="confirmation-icon">✓</div>
+        <h3>Feedback Received</h3>
+        <p>Thank you for helping us improve Fosterify for all students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="logo"><span class="logo-icon">✦</span> Fosterify</span>
+      <p>Helping students find their path, one step at a time.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#explore">Explore</a>
+      <a href="#support">Get Support</a>
+      <a href="#volunteer">Offer Help</a>
+      <a href="#opportunities">Opportunities</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Fosterify. Built by students, for students.</p>
+  </div>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>

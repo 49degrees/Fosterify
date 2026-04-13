@@ -1,33 +1,82 @@
 # Fosterify
-A student-focused platform mapping disparities in academic and extracurricular opportunities.
-# Fosterify
 
-**Fosterify – See the Gaps, Bridge the Future**
+**Find Your Path. Get Support. Move Forward.**
 
-Fosterify is a student-focused, data-driven platform designed to identify and reduce disparities in access to academic and extracurricular opportunities. By collecting survey data, visualizing gaps, and implementing actionable interventions, Fosterify empowers students to reach their full potential.
+Fosterify is a modern, student-focused web platform that helps students discover their interests, access opportunities, and connect with free peer support like tutoring, mentorship, and guidance.
 
 ---
 
-## **Live Site**
+## Live Site
 
-[View Fosterify MVP](https://49degrees.github.io/Fosterify/#impact)
-
-
----
-
-## **Features**
-
-- Embedded **student survey** for collecting access and participation data  
-- **Interactive charts** (Chart.js) to visualize disparities  
-- **Impact metrics** section for tracking progress  
-- Clear **About** and mission statement  
+[View Fosterify](https://49degrees.github.io/Fosterify/)
 
 ---
 
-## **Getting Started**
+## Features
 
-To view or edit the project locally:
+### Explore Paths
+- Interactive interest selection (Academics, Sports, Creativity, Working with People, Not Sure)
+- Engagement style choices (Competitive, Casual, One-on-One)
+- Dynamic suggestion cards based on selections
+- "Not sure where to start?" shortcut for beginner-friendly options
+
+### Get Support
+- Request form for tutoring, mentorship, or guidance
+- Urgency level selection (Low, Medium, High)
+- Preferred availability scheduling
+- Confirmation state with reassuring message
+
+### Offer Help
+- Volunteer signup for tutoring, mentoring, or coaching
+- Community impact messaging
+- Simple, encouraging sign-up flow
+
+### Opportunities Board
+- Curated clubs, competitions, programs, and scholarships
+- Filter by category (Academic, Sports, Leadership, Beginner-Friendly)
+- Difficulty level badges (Beginner, Intermediate, Advanced)
+
+### Smart Features
+- **Matching System**: Form data stored for future matching between requests and volunteers
+- **Low-Barrier Entry**: "Not Sure" options, beginner-friendly suggestions, emphasis on small first steps
+- **Impact Feedback Loop**: "Did this help you?" buttons with optional detailed feedback
+- **Clean UX**: Card-based layouts, pill-button selections, responsive design
+
+---
+
+## Tech Stack
+
+- **HTML5** — Semantic markup
+- **CSS3** — Custom properties, flexbox/grid, responsive design
+- **Vanilla JavaScript** — No frameworks, lightweight and fast
+- **Google Fonts** — Inter typeface
+
+---
+
+## Getting Started
 
 1. Clone the repository:
 ```bash
-git clone [https://49degrees.github.io/Fosterify/#impact]
+git clone https://github.com/49degrees/Fosterify.git
+```
+
+2. Open `index.html` in your browser — no build step required.
+
+---
+
+## Design
+
+- Soft color palette with blue accents (#3b82f6)
+- Rounded card components with subtle shadows
+- Responsive layout (mobile, tablet, desktop)
+- Accessible, student-friendly interface
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
+
+---
+
+© 2026 Fosterify. Built by students, for students.
