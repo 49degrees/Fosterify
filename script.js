@@ -41,8 +41,9 @@ function initPillGroups() {
       pill.addEventListener('click', (e) => {
         e.preventDefault();
         // Toggle selection within group (single select)
+        const wasActive = pill.classList.contains('active');
         group.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-        pill.classList.toggle('active');
+        if (!wasActive) pill.classList.add('active');
       });
     });
   });
