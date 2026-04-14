@@ -1,0 +1,16 @@
+{
+  "name": "fosterify",
+  "version": "1.0.0",
+  "description": "A student-focused platform mapping disparities in academic and extracurricular opportunities. # Fosterify",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0"
+  }
+}
