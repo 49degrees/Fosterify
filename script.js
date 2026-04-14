@@ -53,7 +53,7 @@ function sanitizeFormData(form) {
   var inputs = form.querySelectorAll("input[type='text']");
   var isValid = true;
   inputs.forEach(function(input) {
-    input.value = sanitizeInput(input.value.trim());
+    input.value = input.value.trim();
     if (input.value.length === 0) {
       isValid = false;
     }
