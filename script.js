@@ -1,8 +1,8 @@
-// Sanitize a string to prevent XSS when used in text content
+// HTML-encode a string to prevent XSS when inserted as HTML
 function sanitizeInput(str) {
   var div = document.createElement("div");
   div.textContent = str;
-  return div.textContent;
+  return div.innerHTML;
 }
 
 // EXPLORE PATHS
