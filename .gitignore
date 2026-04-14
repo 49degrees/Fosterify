@@ -11,3 +11,6 @@ Thumbs.db
 # Backup/temp files
 *.bak
 *.tmp
+
+# Dependencies
+node_modules/

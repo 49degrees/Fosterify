@@ -39,3 +39,7 @@ document.getElementById("volunteerForm").addEventListener("submit", function(e) 
   alert("Thanks for offering help!");
   this.reset();
 });
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { generatePath };
+}
