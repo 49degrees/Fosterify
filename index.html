@@ -5,6 +5,10 @@
   <title>Fosterify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Security headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; frame-ancestors 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -62,8 +66,8 @@
   <h2>Get Support</h2>
 
   <form id="supportForm" class="card">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="text" name="school" placeholder="School" required>
+    <input type="text" name="name" placeholder="Your Name" required maxlength="100" pattern="[A-Za-z\s\-'.]+">
+    <input type="text" name="school" placeholder="School" required maxlength="200">
 
     <select name="type">
       <option>Tutoring</option>
@@ -71,7 +75,7 @@
       <option>Guidance</option>
     </select>
 
-    <input type="text" name="subject" placeholder="What do you need help with?" required>
+    <input type="text" name="subject" placeholder="What do you need help with?" required maxlength="500">
 
     <button type="submit" class="primary-btn">Request Help</button>
   </form>
@@ -82,10 +86,10 @@
   <h2>Offer Help</h2>
 
   <form id="volunteerForm" class="card">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="text" name="school" placeholder="School" required>
+    <input type="text" name="name" placeholder="Your Name" required maxlength="100" pattern="[A-Za-z\s\-'.]+">
+    <input type="text" name="school" placeholder="School" required maxlength="200">
 
-    <input type="text" name="skills" placeholder="What can you help with?" required>
+    <input type="text" name="skills" placeholder="What can you help with?" required maxlength="500">
 
     <button type="submit" class="primary-btn">Offer Help</button>
   </form>
