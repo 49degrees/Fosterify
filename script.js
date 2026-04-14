@@ -45,6 +45,9 @@ function generatePath() {
 }
 
 
+// Bind Explore Paths button (no inline onclick — CSP blocks inline scripts)
+document.getElementById("showSuggestions").addEventListener("click", generatePath);
+
 // Sanitize all text inputs in a form before processing
 function sanitizeFormData(form) {
   var inputs = form.querySelectorAll("input[type='text']");
